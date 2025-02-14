@@ -1,0 +1,29 @@
+import pickle
+import numpy as np
+
+# Define categories and sample recommendation data
+recommendation_data = {
+    "beach": {
+        "places": ["Maldives", "Hawaii", "Bora Bora", "Bali", "Santorini"],
+        "features": np.random.rand(5, 128)  # Simulating feature vectors
+    },
+    "mountain": {
+        "places": ["Swiss Alps", "Rocky Mountains", "Himalayas", "Andes", "Mount Kilimanjaro"],
+        "features": np.random.rand(5, 128)
+    },
+    "city": {
+        "places": ["New York", "Tokyo", "London", "Paris", "Dubai"],
+        "features": np.random.rand(5, 128)
+    },
+    "historical": {
+        "places": ["Rome", "Athens", "Cairo", "Machu Picchu", "Beijing"],
+        "features": np.random.rand(5, 128)
+    },
+    "user_preferences": np.random.rand(1, 128)  # Simulated user preference vector
+}
+
+# Save to a file
+with open("models/recommendation_data.pkl", "wb") as f:
+    pickle.dump(recommendation_data, f)
+
+print("Dummy recommendation_data.pkl created successfully!")
